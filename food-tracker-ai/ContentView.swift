@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  food-tracker-ai
-//
-//  Created by Ethan Shafran Moltz on 11/20/23.
-//
-
 import SwiftUI
 import SwiftData
 
