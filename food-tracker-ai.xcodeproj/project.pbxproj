@@ -13,6 +13,12 @@
 		7111887E2B0C353E002B9DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111887D2B0C353E002B9DC8 /* Assets.xcassets */; };
 		711188812B0C353E002B9DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 711188802B0C353E002B9DC8 /* Preview Assets.xcassets */; };
 		711188882B0C432A002B9DC8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711188872B0C432A002B9DC8 /* Models.swift */; };
+		719E62732B0EA37200D9F6AE /* AddMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E62722B0EA37200D9F6AE /* AddMeal.swift */; };
+		719E62762B0EA7A300D9F6AE /* OpenAIConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E62752B0EA7A300D9F6AE /* OpenAIConnect.swift */; };
+		719E62792B0EA8CC00D9F6AE /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 719E62782B0EA8CC00D9F6AE /* OpenAI */; };
+		719E627B2B0EA96900D9F6AE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 719E627A2B0EA96900D9F6AE /* .gitignore */; };
+		719E627E2B0EA9F000D9F6AE /* SwiftDotenv in Frameworks */ = {isa = PBXBuildFile; productRef = 719E627D2B0EA9F000D9F6AE /* SwiftDotenv */; };
+		719E62802B0EA9FD00D9F6AE /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 719E627F2B0EA9FD00D9F6AE /* .env */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +29,10 @@
 		7111887D2B0C353E002B9DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		711188802B0C353E002B9DC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		711188872B0C432A002B9DC8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		719E62722B0EA37200D9F6AE /* AddMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeal.swift; sourceTree = "<group>"; };
+		719E62752B0EA7A300D9F6AE /* OpenAIConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIConnect.swift; sourceTree = "<group>"; };
+		719E627A2B0EA96900D9F6AE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		719E627F2B0EA9FD00D9F6AE /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719E627E2B0EA9F000D9F6AE /* SwiftDotenv in Frameworks */,
+				719E62792B0EA8CC00D9F6AE /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +67,16 @@
 		711188762B0C353D002B9DC8 /* food-tracker-ai */ = {
 			isa = PBXGroup;
 			children = (
+				719E627A2B0EA96900D9F6AE /* .gitignore */,
+				719E62742B0EA79100D9F6AE /* logic */,
+				719E62712B0EA36400D9F6AE /* views */,
 				711188772B0C353D002B9DC8 /* food_tracker_aiApp.swift */,
 				711188792B0C353D002B9DC8 /* ContentView.swift */,
 				7111887B2B0C353D002B9DC8 /* Item.swift */,
 				7111887D2B0C353E002B9DC8 /* Assets.xcassets */,
 				7111887F2B0C353E002B9DC8 /* Preview Content */,
 				711188872B0C432A002B9DC8 /* Models.swift */,
+				719E627F2B0EA9FD00D9F6AE /* .env */,
 			);
 			path = "food-tracker-ai";
 			sourceTree = "<group>";
@@ -71,6 +87,22 @@
 				711188802B0C353E002B9DC8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		719E62712B0EA36400D9F6AE /* views */ = {
+			isa = PBXGroup;
+			children = (
+				719E62722B0EA37200D9F6AE /* AddMeal.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		719E62742B0EA79100D9F6AE /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				719E62752B0EA7A300D9F6AE /* OpenAIConnect.swift */,
+			);
+			path = logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +121,10 @@
 			dependencies = (
 			);
 			name = "food-tracker-ai";
+			packageProductDependencies = (
+				719E62782B0EA8CC00D9F6AE /* OpenAI */,
+				719E627D2B0EA9F000D9F6AE /* SwiftDotenv */,
+			);
 			productName = "food-tracker-ai";
 			productReference = 711188742B0C353D002B9DC8 /* food-tracker-ai.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +153,10 @@
 				Base,
 			);
 			mainGroup = 7111886B2B0C353D002B9DC8;
+			packageReferences = (
+				719E62772B0EA8CC00D9F6AE /* XCRemoteSwiftPackageReference "OpenAI" */,
+				719E627C2B0EA9F000D9F6AE /* XCRemoteSwiftPackageReference "swift-dotenv" */,
+			);
 			productRefGroup = 711188752B0C353D002B9DC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				711188812B0C353E002B9DC8 /* Preview Assets.xcassets in Resources */,
+				719E627B2B0EA96900D9F6AE /* .gitignore in Resources */,
 				7111887E2B0C353E002B9DC8 /* Assets.xcassets in Resources */,
+				719E62802B0EA9FD00D9F6AE /* .env in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +187,9 @@
 			files = (
 				7111887A2B0C353D002B9DC8 /* ContentView.swift in Sources */,
 				7111887C2B0C353D002B9DC8 /* Item.swift in Sources */,
+				719E62762B0EA7A300D9F6AE /* OpenAIConnect.swift in Sources */,
 				711188782B0C353D002B9DC8 /* food_tracker_aiApp.swift in Sources */,
+				719E62732B0EA37200D9F6AE /* AddMeal.swift in Sources */,
 				711188882B0C432A002B9DC8 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +402,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		719E62772B0EA8CC00D9F6AE /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.5;
+			};
+		};
+		719E627C2B0EA9F000D9F6AE /* XCRemoteSwiftPackageReference "swift-dotenv" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thebarndog/swift-dotenv";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		719E62782B0EA8CC00D9F6AE /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 719E62772B0EA8CC00D9F6AE /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+		719E627D2B0EA9F000D9F6AE /* SwiftDotenv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 719E627C2B0EA9F000D9F6AE /* XCRemoteSwiftPackageReference "swift-dotenv" */;
+			productName = SwiftDotenv;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7111886C2B0C353D002B9DC8 /* Project object */;
 }
