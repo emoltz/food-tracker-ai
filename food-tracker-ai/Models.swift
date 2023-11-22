@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class Food {
+class Food {
     @Attribute(.unique) var id: UUID
     var date: Date
     var quantity: Int
@@ -12,7 +12,7 @@ final class Food {
     
     
     init(date: Date, quantity: Int, calories: Double, protein: Double, sugars: Double){
-        id = UUID()
+        self.id = UUID.init()
         self.date = date
         self.quantity = quantity
         self.calories = calories
@@ -22,3 +22,22 @@ final class Food {
     }
     
 }
+
+@Model
+class Meal{
+    @Attribute(.unique) var id: UUID
+    var foodItems: [Food]
+    var totalCalorites: Double
+    var totalProtein: Double
+    var totalSugars: Double
+    
+    init() {
+        self.id = UUID.init()
+        self.foodItems = []
+        self.totalCalorites = 0
+        self.totalProtein = 0
+        self.totalSugars = 0
+    }
+    
+}
+
