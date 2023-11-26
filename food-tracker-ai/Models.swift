@@ -39,5 +39,39 @@ class Meal{
         self.totalSugars = 0
     }
     
+    func addFoodItem(newFood: Food){
+        self.foodItems.append(newFood)
+        addCalculations(food: newFood)
+        
+    }
+    
+    
+    func removeFoodItem(foodToRemove: Food){
+        // remove item
+        if self.foodItems.contains(where: { $0 === foodToRemove }) {
+            self.foodItems.removeAll(where: {$0 === foodToRemove})
+            // remove info
+            removeCalculations(food: foodToRemove)
+            
+        }
+        else{
+            print("food item not in array")
+        }
+        
+    }
+    
+    func addCalculations(food: Food){
+        self.totalSugars += food.sugars
+        self.totalProtein += food.protein
+        self.totalCalorites += food.calories
+    }
+    
+    func removeCalculations(food: Food){
+        self.totalSugars -= food.sugars
+        self.totalProtein -= food.protein
+        self.totalCalorites -= food.calories
+    }
+    
+    
 }
 
