@@ -7,7 +7,7 @@ class DummyData{
     var foods: [Food] = []
     
     init(){
-        self.meals = [Meal(), Meal(), Meal()]
+        self.meals = [Meal(name: "first"), Meal(name: "second"), Meal(name: "third")]
         self.foods = [
             Food(name: "food1", date: Date.now, quantity: 10, calories: 10, protein: 10, sugars: 22.2),
             Food(name: "food2", date: Date.now, quantity: 30, calories: 284.2, protein: 18.2, sugars: 11.1),
@@ -26,21 +26,6 @@ class DummyData{
         foods.forEach{ food in
             modelContext.insert(food)
         }
-    }
-}
-
-@Model
-class User{
-    @Attribute(.unique) var id: UUID
-    var firstName: String
-    var lastName: String
-    var meals: [Meal]
-    
-    init(id: UUID, firstName: String, lastName: String, meals: [Meal]) {
-        self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.meals = meals
     }
 }
 
@@ -73,13 +58,15 @@ class Meal{
     var totalCalorites: Double
     var totalProtein: Double
     var totalSugars: Double
+    var name: String
     
-    init() {
+    init(name: String?) {
         self.id = UUID.init()
         self.foodItems = []
         self.totalCalorites = 0
         self.totalProtein = 0
         self.totalSugars = 0
+        self.name = name ?? "N/A"
     }
     
     func addFoodItem(newFood: Food){
