@@ -19,7 +19,6 @@
 		719E62802B0EA9FD00D9F6AE /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 719E627F2B0EA9FD00D9F6AE /* .env */; };
 		719E62832B0EAC1900D9F6AE /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 719E62822B0EAC1900D9F6AE /* OpenAIKit */; };
 		71BEF65F2B260D17007C8FBC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEF65E2B260D17007C8FBC /* Item.swift */; };
-		71BEF6612B260D57007C8FBC /* testview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEF6602B260D57007C8FBC /* testview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +33,6 @@
 		719E627A2B0EA96900D9F6AE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		719E627F2B0EA9FD00D9F6AE /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		71BEF65E2B260D17007C8FBC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		71BEF6602B260D57007C8FBC /* testview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				719E62722B0EA37200D9F6AE /* AddMeal.swift */,
-				71BEF6602B260D57007C8FBC /* testview.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -190,7 +187,6 @@
 			files = (
 				7111887A2B0C353D002B9DC8 /* ContentView.swift in Sources */,
 				719E62762B0EA7A300D9F6AE /* OpenAIConnect.swift in Sources */,
-				71BEF6612B260D57007C8FBC /* testview.swift in Sources */,
 				711188782B0C353D002B9DC8 /* food_tracker_aiApp.swift in Sources */,
 				719E62732B0EA37200D9F6AE /* AddMeal.swift in Sources */,
 				71BEF65F2B260D17007C8FBC /* Item.swift in Sources */,
