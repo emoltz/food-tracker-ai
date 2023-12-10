@@ -1,33 +1,6 @@
 import Foundation
+import SwiftUI
 import SwiftData
-
-
-class DummyData{
-    var meals: [Meal] = []
-    var foods: [Food] = []
-    
-    init(){
-        self.meals = [Meal(name: "first"), Meal(name: "second"), Meal(name: "third")]
-        self.foods = [
-            Food(name: "food1", date: Date.now, quantity: 10, calories: 10, protein: 10, sugars: 22.2),
-            Food(name: "food2", date: Date.now, quantity: 30, calories: 284.2, protein: 18.2, sugars: 11.1),
-            Food(name: "food3", date: Date.now, quantity: 34, calories: 5.3, protein: 12.2, sugars: 202.2)
-        ]
-        
-        self.meals[0].addFoodItem(newFood: self.foods[0])
-        self.meals[0].addFoodItem(newFood: self.foods[1])
-        self.meals[1].addFoodItem(newFood: self.foods[2])
-    }
-    
-    func populateModelContext(_ modelContext: ModelContext){
-        meals.forEach { meal in
-            modelContext.insert(meal)
-        }
-        foods.forEach{ food in
-            modelContext.insert(food)
-        }
-    }
-}
 
 @Model
 class Food {
@@ -40,7 +13,13 @@ class Food {
     var sugars: Double
     
     
-    init(name: String, date: Date, quantity: Int, calories: Double, protein: Double, sugars: Double){
+    init(name: String, quantity: Int, calories: Double, protein: Double, sugars: Double){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        let date = Date()
+        
         self.id = UUID.init()
         self.name = name
         self.date = date
@@ -59,14 +38,29 @@ class Meal{
     var totalProtein: Double
     var totalSugars: Double
     var name: String
+    var dateCreated: Date
+    var dateDisplay: String
+    var imageName: String
     
-    init(name: String?) {
+    init(name: String = "New Meal", imageName: String = "defaultImage") {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        let date = Date()
+
+        
         self.id = UUID.init()
         self.foodItems = []
         self.totalCalorites = 0
         self.totalProtein = 0
         self.totalSugars = 0
-        self.name = name ?? "N/A"
+        self.name = name
+        self.dateCreated = date
+        self.dateDisplay = dateFormatter.string(from: date)
+        self.imageName = imageName
+        
+        
     }
     
     func addFoodItem(newFood: Food){
