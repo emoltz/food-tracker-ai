@@ -12,6 +12,8 @@
 		7111887E2B0C353E002B9DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111887D2B0C353E002B9DC8 /* Assets.xcassets */; };
 		711188812B0C353E002B9DC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 711188802B0C353E002B9DC8 /* Preview Assets.xcassets */; };
 		711188882B0C432A002B9DC8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711188872B0C432A002B9DC8 /* Models.swift */; };
+		715E5D4E2B26371400F2A9CD /* MealDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E5D4D2B26371400F2A9CD /* MealDetail.swift */; };
+		715E5D502B263A9900F2A9CD /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E5D4F2B263A9900F2A9CD /* FoodDetail.swift */; };
 		719E62732B0EA37200D9F6AE /* AddMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E62722B0EA37200D9F6AE /* AddMeal.swift */; };
 		719E62762B0EA7A300D9F6AE /* OpenAIConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E62752B0EA7A300D9F6AE /* OpenAIConnect.swift */; };
 		719E627B2B0EA96900D9F6AE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 719E627A2B0EA96900D9F6AE /* .gitignore */; };
@@ -28,6 +30,8 @@
 		7111887D2B0C353E002B9DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		711188802B0C353E002B9DC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		711188872B0C432A002B9DC8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		715E5D4D2B26371400F2A9CD /* MealDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetail.swift; sourceTree = "<group>"; };
+		715E5D4F2B263A9900F2A9CD /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
 		719E62722B0EA37200D9F6AE /* AddMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeal.swift; sourceTree = "<group>"; };
 		719E62752B0EA7A300D9F6AE /* OpenAIConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIConnect.swift; sourceTree = "<group>"; };
 		719E627A2B0EA96900D9F6AE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -91,7 +95,9 @@
 		719E62712B0EA36400D9F6AE /* views */ = {
 			isa = PBXGroup;
 			children = (
+				715E5D4D2B26371400F2A9CD /* MealDetail.swift */,
 				719E62722B0EA37200D9F6AE /* AddMeal.swift */,
+				715E5D4F2B263A9900F2A9CD /* FoodDetail.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -186,10 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7111887A2B0C353D002B9DC8 /* ContentView.swift in Sources */,
+				715E5D4E2B26371400F2A9CD /* MealDetail.swift in Sources */,
 				719E62762B0EA7A300D9F6AE /* OpenAIConnect.swift in Sources */,
 				711188782B0C353D002B9DC8 /* food_tracker_aiApp.swift in Sources */,
 				719E62732B0EA37200D9F6AE /* AddMeal.swift in Sources */,
 				71BEF65F2B260D17007C8FBC /* Item.swift in Sources */,
+				715E5D502B263A9900F2A9CD /* FoodDetail.swift in Sources */,
 				711188882B0C432A002B9DC8 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
