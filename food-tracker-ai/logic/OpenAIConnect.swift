@@ -8,10 +8,10 @@ func gptExecute(){
         ProcessInfo.processInfo.environment["OPENAI"]!
     }
     print("API key: ", apiKey)
-    
-    var model=Model.GPT4.gpt40314
-
-    
+//    
+//    var model=Model.GPT4.gpt40314
+//
+//    
     
     
     

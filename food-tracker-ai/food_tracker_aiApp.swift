@@ -12,7 +12,8 @@ import SwiftData
 struct food_tracker_aiApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Food.self,
+            Meal.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
