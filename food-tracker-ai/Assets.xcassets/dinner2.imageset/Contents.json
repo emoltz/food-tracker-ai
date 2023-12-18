@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "delish-230815-tuscan-tortellini-skillet-bake-0364-eb-secondary-64fa7001ed5ab.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -11,9 +11,10 @@ class Food {
     var calories: Double
     var protein: Double
     var sugars: Double
+    var aiDescription: String
     
     
-    init(name: String, quantity: Int, calories: Double, protein: Double, sugars: Double){
+    init(name: String, quantity: Int, calories: Double, protein: Double, sugars: Double, aiDescription: String=""){
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
@@ -27,6 +28,11 @@ class Food {
         self.calories = calories
         self.protein = protein
         self.sugars = sugars
+        self.aiDescription = aiDescription
+    }
+    
+    func addOrUpdateFoodDescription(foodDescription: String){
+        self.aiDescription = foodDescription
     }
 }
 
@@ -41,8 +47,9 @@ class Meal{
     var dateCreated: Date
     var dateDisplay: String
     var imageName: String
+    var compositeDescription: String
     
-    init(name: String = "New Meal", imageName: String = "defaultImage") {
+    init(name: String = "New Meal", imageName: String = "defaultImage", foodItems: [Food] = []) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
@@ -59,6 +66,8 @@ class Meal{
         self.dateCreated = date
         self.dateDisplay = dateFormatter.string(from: date)
         self.imageName = imageName
+        self.compositeDescription = ""
+        self.foodItems = foodItems
         
         
     }
@@ -67,6 +76,14 @@ class Meal{
         self.foodItems.append(newFood)
         addCalculations(food: newFood)
         
+    }
+    
+    func compileCompositDescription(){
+        self.compositeDescription = "The following is a description of the entire meal: "
+        for item in self.foodItems{
+            self.compositeDescription += item.aiDescription
+            self.compositeDescription += "\n"
+        }
     }
     
     
