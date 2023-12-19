@@ -4,6 +4,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var meals: [Meal]
+    @State private var showingAddMealSheet = false
     var body: some View {
            NavigationStack {
                List(meals) { meal in
@@ -20,11 +21,16 @@ struct ContentView: View {
                .toolbar {
                    Button(action: {
                        // Action for adding new meal
+                       showingAddMealSheet.toggle()
                    }, label: {
                        Image(systemName: "plus.app.fill")
-                           .imageScale(.large)
-                           .foregroundColor(.black)
+                           .resizable()
+                           .frame(width: 30, height: 30)
+                           .foregroundColor(.blue)
                    })
+               }
+               .sheet(isPresented: $showingAddMealSheet){
+                   AddMeal()
                }
            }
        }
