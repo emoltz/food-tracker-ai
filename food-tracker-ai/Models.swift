@@ -11,7 +11,7 @@ class Food {
     var calories: Double
     var protein: Double
     var sugars: Double
-    var aiDescription: String
+    var foodDescription: String
     
     
     init(name: String, quantity: Int, calories: Double, protein: Double, sugars: Double, aiDescription: String=""){
@@ -28,11 +28,11 @@ class Food {
         self.calories = calories
         self.protein = protein
         self.sugars = sugars
-        self.aiDescription = aiDescription
+        self.foodDescription = aiDescription
     }
     
     func addOrUpdateFoodDescription(foodDescription: String){
-        self.aiDescription = foodDescription
+        self.foodDescription = foodDescription
     }
 }
 
@@ -40,28 +40,23 @@ class Food {
 class Meal{
     @Attribute(.unique) var id: UUID
     var foodItems: [Food]
-    var totalCalorites: Double
-    var totalProtein: Double
-    var totalSugars: Double
     var name: String
     var dateCreated: Date
     var dateDisplay: String
     var imageName: String
     var compositeDescription: String
+    var userDescription: String
     
-    init(name: String = "New Meal", imageName: String = "defaultImage", foodItems: [Food] = []) {
+    init(name: String = "New Meal", userDescription: String = "", imageName: String = "defaultImage", foodItems: [Food] = []) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_US")
         let date = Date()
-
         
         self.id = UUID.init()
+        self.userDescription = userDescription
         self.foodItems = []
-        self.totalCalorites = 0
-        self.totalProtein = 0
-        self.totalSugars = 0
         self.name = name
         self.dateCreated = date
         self.dateDisplay = dateFormatter.string(from: date)
@@ -72,44 +67,98 @@ class Meal{
         
     }
     
-    func addFoodItem(newFood: Food){
-        self.foodItems.append(newFood)
-        addCalculations(food: newFood)
-        
+    // calculations
+    var totalCalories: Double {
+        foodItems.reduce(0) { $0 + $1.calories}
     }
     
-    func compileCompositDescription(){
-        self.compositeDescription = "The following is a description of the entire meal: "
-        for item in self.foodItems{
-            self.compositeDescription += item.aiDescription
-            self.compositeDescription += "\n"
-        }
+    var totalProtein: Double {
+        foodItems.reduce(0) { $0 + $1.protein }
     }
     
-    
-    func removeFoodItem(foodToRemove: Food){
-        // remove item
-        if self.foodItems.contains(where: { $0 === foodToRemove }) {
-            self.foodItems.removeAll(where: {$0 === foodToRemove})
-            // remove info
-            removeCalculations(food: foodToRemove)
-            
-        }
-        else{
-            print("food item not in array")
-        }
-        
+    var totalSugars: Double {
+        foodItems.reduce(0) { $0 + $1.sugars }
     }
     
-    func addCalculations(food: Food){
-        self.totalSugars += food.sugars
-        self.totalProtein += food.protein
-        self.totalCalorites += food.calories
+    func addFoodItem(newFood: Food) {
+        foodItems.append(newFood)
+    }
+
+    func compileCompositeDescription() {
+        compositeDescription = "The following is a description of the entire meal: "
+        foodItems.forEach { compositeDescription += "\($0.foodDescription)\n" }
+    }
+
+    func removeFoodItem(foodToRemove: Food) {
+        foodItems.removeAll { $0.id == foodToRemove.id }
     }
     
-    func removeCalculations(food: Food){
-        self.totalSugars -= food.sugars
-        self.totalProtein -= food.protein
-        self.totalCalorites -= food.calories
+}
+
+@Model
+class Day {
+    @Attribute(.unique) var id: UUID
+    var date: Date
+    var meals: [Meal]
+
+    init(date: Date) {
+        self.id = UUID()
+        self.date = date
+        self.meals = []
     }
+
+    // Calculates the total nutritional values for the day
+    var totalCalories: Double {
+        meals.reduce(0) { $0 + $1.totalCalories }
+    }
+
+    var totalProtein: Double {
+        meals.reduce(0) { $0 + $1.totalProtein }
+    }
+
+    var totalSugars: Double {
+        meals.reduce(0) { $0 + $1.totalSugars }
+    }
+
+    func addMeal(newMeal: Meal) {
+        meals.append(newMeal)
+    }
+
+    func removeMeal(mealToRemove: Meal) {
+        meals.removeAll { $0.id == mealToRemove.id }
+    }
+}
+
+
+@Model
+class User {
+    @Attribute(.unique) var id: UUID
+    var days: [Day]
+    
+    init() {
+        self.id = UUID()
+        self.days = []
+    }
+    
+    // Calculates the total nutritional values across all days
+    var totalCalories: Double {
+        days.reduce(0) { $0 + $1.totalCalories }
+    }
+    
+    var totalProtein: Double {
+        days.reduce(0) { $0 + $1.totalProtein }
+    }
+    
+    var totalSugars: Double {
+        days.reduce(0) { $0 + $1.totalSugars }
+    }
+    
+    func addDay(newDay: Day) {
+        days.append(newDay)
+    }
+    
+    func getDays(from startDate: Date, to endDate: Date) -> [Day] {
+         return days.filter { $0.date >= startDate && $0.date <= endDate }
+     }
+    
 }

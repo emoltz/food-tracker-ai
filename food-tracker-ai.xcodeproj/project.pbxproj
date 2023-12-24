@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710254E42B3245C900D09F37 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710254E32B3245C900D09F37 /* UserProfile.swift */; };
 		711188782B0C353D002B9DC8 /* food_tracker_aiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711188772B0C353D002B9DC8 /* food_tracker_aiApp.swift */; };
 		7111887A2B0C353D002B9DC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711188792B0C353D002B9DC8 /* ContentView.swift */; };
 		7111887E2B0C353E002B9DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7111887D2B0C353E002B9DC8 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		710254E32B3245C900D09F37 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		711188742B0C353D002B9DC8 /* food-tracker-ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "food-tracker-ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		711188772B0C353D002B9DC8 /* food_tracker_aiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = food_tracker_aiApp.swift; sourceTree = "<group>"; };
 		711188792B0C353D002B9DC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				715E5D4D2B26371400F2A9CD /* MealDetail.swift */,
 				719E62722B0EA37200D9F6AE /* AddMeal.swift */,
 				715E5D4F2B263A9900F2A9CD /* FoodDetail.swift */,
+				710254E32B3245C900D09F37 /* UserProfile.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				71BEF65F2B260D17007C8FBC /* Item.swift in Sources */,
 				715E5D502B263A9900F2A9CD /* FoodDetail.swift in Sources */,
 				711188882B0C432A002B9DC8 /* Models.swift in Sources */,
+				710254E42B3245C900D09F37 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

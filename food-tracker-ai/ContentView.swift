@@ -5,35 +5,47 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var meals: [Meal]
     @State private var showingAddMealSheet = false
+    @State private var showPersonalInfo = false
     var body: some View {
-           NavigationStack {
-               List(meals) { meal in
-                   NavigationLink(destination: MealDetail(meal: meal)) {
-                       VStack(alignment: .leading) {
-                           Text("Date: \(meal.dateDisplay)")
-                               .font(.headline)
-                           Text("Meal Name: \(meal.name)")
-                           Text("Meal Calories: \(meal.totalCalorites)")
-                       }
-                   }
-               }
-               .navigationTitle("Your Stuff")
-               .toolbar {
-                   Button(action: {
-                       // Action for adding new meal
-                       showingAddMealSheet.toggle()
-                   }, label: {
-                       Image(systemName: "plus.app.fill")
-                           .resizable()
-                           .frame(width: 30, height: 30)
-                           .foregroundColor(.blue)
-                   })
-               }
-               .sheet(isPresented: $showingAddMealSheet){
-                   AddMeal()
-               }
-           }
-       }
+        NavigationStack {
+            List(meals) { meal in
+                NavigationLink(destination: MealDetail(meal: meal)) {
+                    VStack(alignment: .leading) {
+                        Text("Date: \(meal.dateDisplay)")
+                            .font(.headline)
+                        Text("Meal Name: \(meal.name)")
+                        Text("Meal Calories: \(meal.totalCalories)")
+                    }
+                }
+            }
+            .navigationTitle("Your Meals")
+            .toolbar {
+                Button(action: {
+                    showPersonalInfo.toggle()
+                }, label: {
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.black)
+                })
+                
+                Button(action: {
+                    showingAddMealSheet.toggle()
+                }, label: {
+                    Image(systemName: "plus.app.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.blue)
+                })
+            }
+            .sheet(isPresented: $showingAddMealSheet){
+                AddMeal()
+            }
+            .sheet(isPresented: $showPersonalInfo, content: {
+                Text("Hello")
+            })
+        }
+    }
 }
 
 #Preview {
