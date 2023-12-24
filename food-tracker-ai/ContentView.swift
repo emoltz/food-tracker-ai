@@ -42,7 +42,7 @@ struct ContentView: View {
                 AddMeal()
             }
             .sheet(isPresented: $showPersonalInfo, content: {
-                Text("Hello")
+                UserProfile()
             })
         }
     }
