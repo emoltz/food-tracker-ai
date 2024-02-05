@@ -9,9 +9,19 @@ struct AddMeal: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: image ?? UIImage())
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            if let img = image {
+                Image(uiImage: img)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+            
+            Button("Describe",systemImage: "mic.circle", action: {
+                
+            } )
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .cornerRadius(15)
             Button("Take Photo") {
                 showCamera = true;
                 
