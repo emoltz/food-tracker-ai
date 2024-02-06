@@ -22,6 +22,7 @@
 		719E62802B0EA9FD00D9F6AE /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 719E627F2B0EA9FD00D9F6AE /* .env */; };
 		719E62832B0EAC1900D9F6AE /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 719E62822B0EAC1900D9F6AE /* OpenAIKit */; };
 		71BEF65F2B260D17007C8FBC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEF65E2B260D17007C8FBC /* Item.swift */; };
+		EE5EDA612B728BB400ACFFA3 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = EE5EDA602B728BB400ACFFA3 /* .env */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		719E627A2B0EA96900D9F6AE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		719E627F2B0EA9FD00D9F6AE /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		71BEF65E2B260D17007C8FBC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EE5EDA602B728BB400ACFFA3 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				7111887D2B0C353E002B9DC8 /* Assets.xcassets */,
 				7111887F2B0C353E002B9DC8 /* Preview Content */,
 				711188872B0C432A002B9DC8 /* Models.swift */,
+				EE5EDA602B728BB400ACFFA3 /* .env */,
 			);
 			path = "food-tracker-ai";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5EDA612B728BB400ACFFA3 /* .env in Resources */,
 				711188812B0C353E002B9DC8 /* Preview Assets.xcassets in Resources */,
 				719E627B2B0EA96900D9F6AE /* .gitignore in Resources */,
 				7111887E2B0C353E002B9DC8 /* Assets.xcassets in Resources */,
