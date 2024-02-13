@@ -39,13 +39,13 @@ class Food {
 @Model
 class Meal{
     @Attribute(.unique) var id: UUID
-    var foodItems: [Food]
-    var name: String
-    var dateCreated: Date
-    var dateDisplay: String
-    var imageName: String
-    var compositeDescription: String
-    var userDescription: String
+    private var foodItems: [Food]
+    private var name: String
+    private var dateCreated: Date
+    private var dateDisplay: String
+    private var imageName: String
+    private var compositeDescription: String
+    private var userDescription: String
     
     init(name: String = "New Meal", userDescription: String = "", imageName: String = "defaultImage", foodItems: [Food] = []) {
         let dateFormatter = DateFormatter()
@@ -65,6 +65,10 @@ class Meal{
         self.foodItems = foodItems
         
         
+    }
+    
+    func getFoodItems() -> [Food] {
+        return self.foodItems
     }
     
     // calculations
