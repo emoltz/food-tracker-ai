@@ -84,7 +84,6 @@
 				7111887D2B0C353E002B9DC8 /* Assets.xcassets */,
 				7111887F2B0C353E002B9DC8 /* Preview Content */,
 				711188872B0C432A002B9DC8 /* Models.swift */,
-				EE5EDA602B728BB400ACFFA3 /* .env */,
 			);
 			path = "food-tracker-ai";
 			sourceTree = "<group>";
@@ -112,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				719E627F2B0EA9FD00D9F6AE /* .env */,
+				EE5EDA602B728BB400ACFFA3 /* .env */,
 				719E62752B0EA7A300D9F6AE /* OpenAIConnect.swift */,
 			);
 			path = logic;
