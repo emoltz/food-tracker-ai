@@ -40,12 +40,12 @@ class Food {
 class Meal{
     @Attribute(.unique) var id: UUID
     private var foodItems: [Food]
-    private var name: String
+    var name: String
     private var dateCreated: Date
-    private var dateDisplay: String
+    var dateDisplay: String
     private var imageName: String
-    private var compositeDescription: String
-    private var userDescription: String
+    var compositeDescription: String
+    var userDescription: String
     
     init(name: String = "New Meal", userDescription: String = "", imageName: String = "defaultImage", foodItems: [Food] = []) {
         let dateFormatter = DateFormatter()
