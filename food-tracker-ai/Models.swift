@@ -73,15 +73,15 @@ class Meal{
     
     // calculations
     var totalCalories: Double {
-        foodItems.reduce(0) { $0 + $1.calories}
+        self.getFoodItems().reduce(0) { $0 + $1.calories}
     }
     
     var totalProtein: Double {
-        foodItems.reduce(0) { $0 + $1.protein }
+        self.getFoodItems().reduce(0) { $0 + $1.protein }
     }
     
     var totalSugars: Double {
-        foodItems.reduce(0) { $0 + $1.sugars }
+        self.getFoodItems().reduce(0) { $0 + $1.sugars }
     }
     
     func addFoodItem(newFood: Food) {
@@ -90,7 +90,7 @@ class Meal{
 
     func compileCompositeDescription() {
         compositeDescription = "The following is a description of the entire meal: "
-        foodItems.forEach { compositeDescription += "\($0.foodDescription)\n" }
+        self.getFoodItems().forEach { compositeDescription += "\($0.foodDescription)\n" }
     }
 
     func removeFoodItem(foodToRemove: Food) {
