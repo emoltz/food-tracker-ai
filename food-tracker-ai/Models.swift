@@ -41,9 +41,9 @@ class Meal{
     @Attribute(.unique) var id: UUID
     private var foodItems: [Food]
     var name: String
-    private var dateCreated: Date
+    var dateCreated: Date
     var dateDisplay: String
-    private var imageName: String
+    var imageName: String
     var compositeDescription: String
     var userDescription: String
     

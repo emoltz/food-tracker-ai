@@ -15,7 +15,7 @@ struct MealDetail: View {
                     .font(.caption)
             }
             
-            List(meal.foodItems){ food in
+            List(meal.getFoodItems()){ food in
                 NavigationLink(destination: FoodDetail(food: food)){
                     Text(food.name ?? "")
                 }
