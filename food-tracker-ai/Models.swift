@@ -46,8 +46,9 @@ class Meal{
     var imageName: String
     var compositeDescription: String
     var userDescription: String
+    var mealType: String // breakfast, lunch, dinner
     
-    init(name: String = "New Meal", userDescription: String = "", imageName: String = "defaultImage", foodItems: [Food] = []) {
+    init(name: String = "New Meal", userDescription: String = "", imageName: String = "defaultImage", foodItems: [Food] = [], mealType: String = "") {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
@@ -63,7 +64,7 @@ class Meal{
         self.imageName = imageName
         self.compositeDescription = ""
         self.foodItems = foodItems
-        
+        self.mealType = mealType
         
     }
     
