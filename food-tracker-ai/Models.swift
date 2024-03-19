@@ -112,8 +112,9 @@ class Day {
         self.meals = []
     }
     
-    var displayString: String {
+    func displayString() -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d"
         let dateString = dateFormatter.string(from: self.date)
         return dateString
     }
