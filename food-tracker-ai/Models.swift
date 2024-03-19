@@ -111,6 +111,13 @@ class Day {
         self.date = date
         self.meals = []
     }
+    
+    var displayString: String {
+        let dateFormatter = DateFormatter()
+        let dateString = dateFormatter.string(from: self.date)
+        return dateString
+    }
+    
 
     // Calculates the total nutritional values for the day
     var totalCalories: Double {

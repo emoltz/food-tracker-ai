@@ -4,6 +4,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var meals: [Meal]
+    @Query private var days: [Day]
     @State private var showingAddMealSheet = false
     @State private var showPersonalInfo = false
     var body: some View {
@@ -50,7 +51,7 @@ struct ContentView: View {
 
 #Preview {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(for: Meal.self, Food.self, configurations: config)
+    let container = try! ModelContainer(for: Meal.self, Food.self, Day.self, configurations: config)
     
     // Insert dummy data
     let food1 = Food(name: "food1", quantity: 10, calories: 10, protein: 10, sugars: 22.2)
@@ -67,6 +68,14 @@ struct ContentView: View {
     container.mainContext.insert(meal1)
     container.mainContext.insert(meal2)
     container.mainContext.insert(meal3)
+    
+    // days
+    let today = Date()
+    let yesterday = Calendar.current.date(byAdding: .day, value: -1, to:today) ?? Date();
+    let todayDay = Day(date: today)
+    let yesterdayDay = Day(date: yesterday)
+    container.mainContext.insert(todayDay)
+    container.mainContext.insert(yesterdayDay)
     
     return ContentView()
         .modelContainer(container)
