@@ -68,6 +68,10 @@ class Meal{
         
     }
     
+    func toString() -> String {
+        return self.name
+    }
+    
     func getFoodItems() -> [Food] {
         return self.foodItems
     }
@@ -119,6 +123,19 @@ class Day {
         return dateString
     }
     
+    func addMeal(meal: Meal){
+        self.meals.append(meal)
+    }
+    
+    func addMeals(meals: [Meal]){
+        for meal in meals {
+            self.meals.append(meal)
+        }
+    }
+    
+    func showMeals(index: Int) -> String {
+        return self.meals[index].toString()
+    }
 
     // Calculates the total nutritional values for the day
     var totalCalories: Double {
@@ -131,10 +148,6 @@ class Day {
 
     var totalSugars: Double {
         meals.reduce(0) { $0 + $1.totalSugars }
-    }
-
-    func addMeal(newMeal: Meal) {
-        meals.append(newMeal)
     }
 
     func removeMeal(mealToRemove: Meal) {
