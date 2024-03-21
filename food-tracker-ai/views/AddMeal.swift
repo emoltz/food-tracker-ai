@@ -5,7 +5,7 @@ struct AddMeal: View {
     
     @State private var image: UIImage?
     @State private var showCamera = false
-    
+    @State private var isPressed = false
     
     var body: some View {
         VStack {
@@ -14,23 +14,35 @@ struct AddMeal: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
+            else{
+                ZStack {
+                    Rectangle()
+                        .fill(.tertiary)
+                    Image(systemName: "camera")
+                        .font(.system(size: 64))
+                        .foregroundStyle(.secondary)
+                }
+                .cornerRadius(20)
+                .padding()
+                .onTapGesture{
+                    isPressed = true
+                    showCamera = true
+                }
+                
+                
+            }
+            
+            
             
             Button("Describe",systemImage: "mic.circle", action: {
+                
                 
             } )
             .padding()
             .foregroundColor(.white)
             .background(Color.blue)
             .cornerRadius(15)
-            Button("Take Photo") {
-                showCamera = true;
                 
-            }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(15)
-            
             
         }
         .sheet(isPresented: $showCamera){
